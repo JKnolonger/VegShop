@@ -13,6 +13,7 @@
         <param-value>
             /WEB-INF/context/applicationContext.xml
             /WEB-INF/context/security.xml
+            /WEB-INF/context/forgotpass-servlet.xml
         </param-value>
     </context-param>
 

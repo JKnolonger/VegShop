@@ -1,3 +1,4 @@
+ <%@include file="/common/taglib.jsp"%> 
  <header class="header">
         <div class="header__top">
             <div class="container">
@@ -28,7 +29,7 @@
                                 </ul>
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
+                                <a href="<c:url value='/dang-nhap'/>"><i class="fa fa-user"></i> Login</a>
                             </div>
                         </div>
                     </div>

@@ -16,6 +16,21 @@
      <decorator name="register" page="register.jsp">
         <pattern>/dang-ki</pattern>
     </decorator>
+    <decorator name="forgetPass" page="forgetPass.jsp">
+        <pattern>/quen-mat-khau</pattern>
+    </decorator>
+     <decorator name="checkmail" page="checkmail.jsp">
+        <pattern>/checkmail</pattern>
+    </decorator>
+     <decorator name="checkmail" page="checkmail.jsp">
+        <pattern>/savePass</pattern>
+    </decorator>
+    <decorator name="newpass" page="newpass.jsp">
+        <pattern>/newPassword*</pattern>
+    </decorator>
+     <decorator name="resetpass" page="resetpass.jsp">
+        <pattern>/resetPassword</pattern>
+    </decorator>
    <!--  <decorator name="checkout" page="checkout.jsp">
         <pattern>/gio-hang/checkout</pattern>
     </decorator> -->

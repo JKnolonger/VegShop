@@ -51,8 +51,8 @@
 						</label>
 						
 					</div>
-					<div class="m-l-4"><label class="label" for="ckb1">
-							Forget password!
+					<div class="m-l-4"><label class="label"  >
+							<a href="<c:url value='/quen-mat-khau'/>">Forget password!</a>
 						</label></div>
 					
 					<div class="container-login100-form-btn p-t-25">
