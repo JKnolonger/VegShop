@@ -1,6 +1,7 @@
 package com.huutin.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.huutin.entity.UserEntity;
@@ -11,6 +12,8 @@ public class UserServices {
 	
 @Autowired
 private UserRepository userRepo;
+@Autowired
+private PasswordEncoder passwordEncoder;
 
 	public UserEntity findById(long id) {
 		UserEntity userEntity = userRepo.findOne(id);
@@ -19,7 +22,7 @@ private UserRepository userRepo;
 	
 	public void updatePassUser(long id,String pass) {
 		UserEntity newU=findById(id);
-		newU.setPassword(pass);
+		newU.setPassword(passwordEncoder.encode(pass));
 		userRepo.save(newU);
 	}
 	
