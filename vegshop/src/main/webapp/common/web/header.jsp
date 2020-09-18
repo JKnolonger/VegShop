@@ -1,4 +1,31 @@
  <%@include file="/common/taglib.jsp"%> 
+ <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
+ <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+ <%@page import="com.huutin.util.SecurityUtils" %> 
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ogani | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="<c:url value='/template/web/css/bootstrap.min.css'/>" type="text/css">
+    <link rel="stylesheet" href="<c:url value='/template/web/css/font-awesome.min.css'/>" type="text/css">
+    <link rel="stylesheet" href="<c:url value='/template/web/css/elegant-icons.css'/>" type="text/css">
+    <link rel="stylesheet" href="<c:url value='/template/web/css/nice-select.css'/>" type="text/css">
+    <link rel="stylesheet" href="<c:url value='/template/web/css/jquery-ui.min.css'/>" type="text/css">
+    <link rel="stylesheet" href="<c:url value='/template/web/css/owl.carousel.min.css'/>" type="text/css">
+    <link rel="stylesheet" href="<c:url value='/template/web/css/slicknav.min.css'/>" type="text/css">
+    <link rel="stylesheet" href="<c:url value='/template/web/css/style.css'/>" type="text/css"> 
+</head>
+<body>
  <header class="header">
         <div class="header__top">
             <div class="container">
@@ -28,9 +55,20 @@
                                     <li><a href="#">English</a></li>
                                 </ul>
                             </div>
+								<security:authorize access = "isAnonymous()">
                             <div class="header__top__right__auth">
                                 <a href="<c:url value='/dang-nhap'/>"><i class="fa fa-user"></i> Login</a>
                             </div>
+                            <div class="header__top__right__auth">
+                                <a href="<c:url value='/dang-ki'/>"><i class="fa fa-user"></i> Register</a>
+                            </div>
+								</security:authorize>
+                           <security:authorize access = "isAuthenticated()">
+								<div class="header__top__right__auth"><a href="#"><i class="fa fa-user"></i> <%=SecurityUtils.getPrincipal().getFullName() %></a></li>
+								</div>
+								<div class="header__top__right__auth"><a href="<c:url value='/thoat'/>"><i class="fa fa-exit"></i> Thoát</a></li>
+								</div>
+								</security:authorize>
                         </div>
                     </div>
                 </div>
@@ -77,4 +115,5 @@
         </div>
         
     </header>
-  
+  </body>
+  </html>

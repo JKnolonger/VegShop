@@ -8,7 +8,7 @@
 <title>Home Page</title>
 </head>
 <body>
-Enter New Password for ${emailid}
+<h1>${user.email }</h1>
 	<form action="<c:url value='/savePass'/>" method="post">
 		<table>
 			<tr>
@@ -26,6 +26,7 @@ Enter New Password for ${emailid}
 			</tr>
 			
 		</table>
+		<input type="hidden" name="userId" value="${user.id }"/>
 	</form>
 </body>
 </html>

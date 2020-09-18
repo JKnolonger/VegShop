@@ -18,22 +18,6 @@ public class UserEntity extends BaseEntity{
 	@Column(name = "username")
 	private String userName;
 	
-	
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 	@Column(name = "email")
 	private String email;
 	
@@ -95,5 +79,21 @@ public class UserEntity extends BaseEntity{
 	public void setRoles(List<RoleEntity> roles) { 
 		  this.roles = roles; 
 		  }
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	 
 }
