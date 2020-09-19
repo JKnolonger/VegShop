@@ -16,6 +16,9 @@
      <decorator name="register" page="register.jsp">
         <pattern>/dang-ki</pattern>
     </decorator>
+    <decorator name="register" page="register.jsp">
+        <pattern>/addUser</pattern>
+    </decorator>
     <decorator name="forgetPass" page="forgetPass.jsp">
         <pattern>/quen-mat-khau</pattern>
     </decorator>

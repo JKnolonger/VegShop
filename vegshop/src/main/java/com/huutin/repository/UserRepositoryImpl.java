@@ -24,7 +24,7 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
 	        query.setParameter(1, email + "%");
 	        return (UserEntity) query.getSingleResult();
 	    }catch(Exception e){
-	    	System.out.println("loi khong tim thay email");
+	    	System.out.println("khong tim thay email");
 	    	return null;
 	    }
 }
