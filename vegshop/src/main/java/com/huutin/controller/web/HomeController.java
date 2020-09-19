@@ -43,7 +43,7 @@ public class HomeController {
 	}
 	@RequestMapping(value = "/dang-ki", method = RequestMethod.GET)
 	public ModelAndView registerPage() {
-		ModelAndView mav = new ModelAndView("register");
+		ModelAndView mav = new ModelAndView("register/register");
 		return mav;
 	}
 	@RequestMapping(value="/quen-mat-khau")
