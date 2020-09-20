@@ -1,7 +1,11 @@
 package com.huutin.controller.web;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,7 +19,7 @@ import com.huutin.service.impl.UserServices;
 
 @Controller
 public class UserController {
-	
+	String resultmessage;
 	@Autowired
 	private UserServices userService;
 	
@@ -50,5 +54,18 @@ public class UserController {
 				return mav;
 			}
 	}
-	  
+	 @RequestMapping("/search")
+	    public ModelAndView viewHomePage(@RequestParam("keyword") String keyword) {
+	        List<UserEntity> listUser = userService.listAll(keyword);
+	        
+			if(listUser.isEmpty()) {
+	        	 resultmessage = "Not found result";
+	        }else {
+	        	resultmessage = "Result search";
+	        }
+	        ModelAndView mav = new ModelAndView("web/searchResult");
+	        mav.addObject("msg", resultmessage);
+	        mav.addObject("ListUser", listUser);
+	        return mav;
+	    }
 	}

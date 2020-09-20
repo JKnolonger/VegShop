@@ -5,7 +5,9 @@
     <decorator name="web" page="web.jsp">
        <pattern>/*</pattern>
     </decorator>
-    
+     <decorator name="search" page="search.jsp">
+       <pattern>/search</pattern>
+    </decorator>
     <decorator name="admin" page="admin.jsp">
        <pattern>/quan-tri*</pattern>
     </decorator>

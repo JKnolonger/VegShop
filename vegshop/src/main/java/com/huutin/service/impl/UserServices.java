@@ -1,5 +1,7 @@
 package com.huutin.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -40,5 +42,11 @@ private PasswordEncoder passwordEncoder;
 		userEntity = userConverter.toEntity(user,pass);
 		return userRepo.save(userEntity);
 	}
-	
+	 public List<UserEntity> listAll(String keyword) {
+	        if (keyword != null) {
+	            return userRepo.search(keyword);
+	        }
+	        return userRepo.findAll();
+	     
+	}
 }
