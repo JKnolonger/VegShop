@@ -1,4 +1,4 @@
-package com.huutin.util;
+package com.huutin.utils;
 
 import java.util.HashMap;
 import java.util.Map;

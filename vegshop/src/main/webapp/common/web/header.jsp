@@ -1,7 +1,7 @@
  <%@include file="/common/taglib.jsp"%> 
  <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
  <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
- <%@page import="com.huutin.util.SecurityUtils" %> 
+ <%@page import="com.huutin.utils.SecurityUtils" %> 
  <!DOCTYPE html>
 <html>
 <head>

@@ -3,6 +3,8 @@
     <persistence-unit name="persistence-data">
          <class>com.huutin.entity.UserEntity</class>
           <class>com.huutin.entity.RoleEntity</class>
+          <class>com.huutin.entity.VegEntity</class>
+          <class>com.huutin.entity.CategoryEntity</class>
     </persistence-unit>
 </persistence>
 
